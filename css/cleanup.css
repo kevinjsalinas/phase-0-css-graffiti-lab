@@ -1,1 +1,33 @@
 /* write your override styles here */
+
+div.tag-1 {
+    display: none;
+}
+
+div#wall > div#tag-2 {
+    display: none;
+}
+
+div#wall #tag-3.slick.wicked {                                  /* div#tag-2 ~ div#tag-3* ; div[id="tag-3"] tested but didn't work */
+    display: none;
+}
+
+div#wall div.parent div#tag-4{
+    display: none;
+}
+
+div#wall div.parent ~ div {  
+    display: none;
+}
+
+/* "div#wall div.parent ~ div" solved (see below):
+
+div#wall div.parent #tag-5.slick {   *not needed anymore*
+    display:none;
+}
+
+div#wall div.parent div:last-child{  *not needed anymore*            
+    display: none;
+} */
+
+/* Other Notes: using the styles in DOM or `inspect` helped to find its name selector and tags */
